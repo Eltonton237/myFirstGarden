@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhml"	xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acceuil</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+	<!--
+	<div th:if="${a!=0}">
+		<script>
+        /* Rediriger l'utilisateur vers une autre page */
+        window.location.href = "http://localhost:8081/signin";
+    </script>
+	</div>
+	-->
+    <header>
+        <div id = "reste_du_header">
+            <div id = "header_liens_container">
+                <a href="index.html" id = "nom_marque_header">Skiline</a>
+                <div id = "barre_principale_header">
+                    <a href="index.html" class = "lien_vers_acceuil">Acceuil</a>
+                    <a href="cours.html">Cours</a>
+                    <a href="aide.html">Aide</a>
+                    <a href="apropos.html">A-propos</a>
+                    <div class="div_de_la_recherche">
+                        <svg viewBox="0 0 16 16">
+                            <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+                          </svg>
+                    </div>
+                </div>
+                <div id = "inscription_connexion_header">
+                    <a href="signup.html" th:href="@{/signup}">inscription</a>
+                    <a href="signin.html" th:href="@{/signin}">Se connecter</a>
+                </div>
+            </div>
+            <div id = "header_liens_container_mobile">
+                <div id = "first_header_line_mobile">
+                    <svg id = "hamburger_mobile" viewBox="0 0 16 16" onclick="togleMenu()">
+                        <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"></path>
+                    </svg>
+                    <div id = "inscription_connexion_mobile">
+                        <a href="" id = "inscriptin_mobile">inscription</a>
+                        <a href="" id = "se_connecter_mobile"> se connecter</a>
+                    </div>
+                    <div class="div_de_la_recherche" id="div_de_la_recherche_mobile">
+                        <svg viewBox="0 0 16 16">
+                            <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+                          </svg>
+                    </div>
+                </div>
+                <div id = "container_header"> 
+                    <div id = "parent_barre_principale_header_mobile">
+                        <div id = "barre_principale_header_mobile" style="display: none;">
+                            <a href="index.html" class = "lien_vers_acceuil" id = "lien_vers_acceuil_mobile">Acceuil</a>
+                            <a href="cours.html">Cours</a>
+                            <a href="aide.html">Aide</a>
+                            <a href="apropos.html">A-propos</a>
+                        </div>
+                    </div>
+                    <h1 id = "nom_mobile">Skilline</h1>
+                    <h1 id = "premier_titre_mobile">Etudier en ligne est maintenant facile</h1>
+                </div>
+                <script>
+                    let barrePrincipaleHeaderMobile = document.getElementById("barre_principale_header_mobile");
+                    function togleMenu(){
+                        let visibilite = barrePrincipaleHeaderMobile.style.display;
+                        if(visibilite == "none"){
+                            barrePrincipaleHeaderMobile.style.display = "flex";
+                        }else{
+                            barrePrincipaleHeaderMobile.style.display = "none";
+                        }
+                    }
+                </script>
+            </div>
+            <div id="grands_block_header">
+                <div id = "grands_block_header_gauche">
+                    <h1>
+                        <span id = "etudier_header">Etudier</span>
+                        <span>en ligne est maintenant facile</span>
+                    </h1>
+                    <p>
+                        Skilline est une superbe plateforme qui vous permet de suivre vos cours à distance 
+                    </p>
+                    <div>
+                        <a href="" id = "inscrire_header_button">s'incrire</a>
+                        <a href="" id = "block_explorer">
+                            <div id = "player_cercle_svg_header1">
+                                <svg id = "play_svg_header" viewBox="0 0 16 16">
+                                    <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM6.79 5.093A.5.5 0 0 0 6 5.5v5a.5.5 0 0 0 .79.407l3.5-2.5a.5.5 0 0 0 0-.814l-3.5-2.5z"/>
+                                </svg>
+                            </div>
+                            <span id = "explorer_header">Explorer</span>
+                        </a>
+                    </div>
+                </div>
+                <div id = "grands_block_header_droite">
+                    <img id = "main_image_header" src="img/main_image_header_sans_header.png" alt="">
+                    <div class = "decoration_main_image" id = "decoration_main_image_premier">
+                        <div>
+                            <div class = "cercle_header_decoration">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cloud-arrow-down-fill" viewBox="0 0 16 16">
+                                    <path d="M8 2a5.53 5.53 0 0 0-3.594 1.342c-.766.66-1.321 1.52-1.464 2.383C1.266 6.095 0 7.555 0 9.318 0 11.366 1.708 13 3.781 13h8.906C14.502 13 16 11.57 16 9.773c0-1.636-1.242-2.969-2.834-3.194C12.923 3.999 10.69 2 8 2zm2.354 6.854-2 2a.5.5 0 0 1-.708 0l-2-2a.5.5 0 1 1 .708-.708L7.5 9.293V5.5a.5.5 0 0 1 1 0v3.793l1.146-1.147a.5.5 0 0 1 .708.708z"/>
+                                </svg>
+                            </div>
+                        </div>
+                        <div>
+                            <h2>Etudiez</h2>
+                            <p>Partout dans le monde</p>
+                        </div>
+                    </div>
+                    <div class = "decoration_main_image" id = "decoration_main_image_deuxieme">
+                        <div>
+                            <div class = "cercle_header_decoration" id = "cercle_header_decoration_felicitations">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-envelope-fill" viewBox="0 0 16 16">
+                                    <path d="M.05 3.555A2 2 0 0 1 2 2h12a2 2 0 0 1 1.95 1.555L8 8.414.05 3.555ZM0 4.697v7.104l5.803-3.558L0 4.697ZM6.761 8.83l-6.57 4.027A2 2 0 0 0 2 14h12a2 2 0 0 0 1.808-1.144l-6.57-4.027L8 9.586l-1.239-.757Zm3.436-.586L16 11.801V4.697l-5.803 3.546Z"/>
+                                </svg>
+                            </div>
+                        </div>
+                        <div>
+                            <h2>Felicitations !</h2>
+                            <p>Vous avez terminé ce cours</p>
+                        </div>
+                    </div>
+                    <div class = "decoration_main_image" id = "decoration_main_image_troisieme">
+                        <div>
+                            <div class = "cercle_header_decoration" id = "cercle_header_decoration_enseignant">
+                                <img src="img/enseignant.jpg" alt="">
+                            </div>
+                        </div>
+                        <div>
+                            <h2>Les meilleurs cours</h2>
+                            <p>Par les meilleurs enseignants</p>
+                            <a href="" id = "inscrire_decoration">S'inscrire</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id = "pere_block_explorer2">
+            <a href="" id = "block_explorer2">
+                <div id = "player_cercle_svg_header2">
+                    <svg id = "play_svg_header2" viewBox="0 0 16 16">
+                        <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM6.79 5.093A.5.5 0 0 0 6 5.5v5a.5.5 0 0 0 .79.407l3.5-2.5a.5.5 0 0 0 0-.814l-3.5-2.5z"/>
+                    </svg>
+                </div>
+                <span id = "explorer_header2">Explorer</span>
+            </a>
+        </div>
+        <div id = "container_font_blue">
+            <div id = "font_blue"></div>
+        </div>
+    </header>
+    <div id = "container_du_body">
+        <section id = "all_in_one_section" class = "main_section">
+            <h1>
+                <span class = "main_title_start">Une solution</span>
+                <span class = "main_title_end">Tout en un</span>
+            </h1>
+            <p>
+                Skilline est un puissant logiciel en ligne qui combine tous les outils nécessaires pour la réussite de votre parcours scolaire
+            </p>
+            <div>
+                <div>
+                    <div id = "main_cercle_1">
+                        <svg class="cercle_icon" viewBox="0 0 16 16">
+                            <path d="M1 3.5A1.5 1.5 0 0 1 2.5 2h2.764c.958 0 1.76.56 2.311 1.184C7.985 3.648 8.48 4 9 4h4.5A1.5 1.5 0 0 1 15 5.5v7a1.5 1.5 0 0 1-1.5 1.5h-11A1.5 1.5 0 0 1 1 12.5v-9zM2.5 3a.5.5 0 0 0-.5.5V6h12v-.5a.5.5 0 0 0-.5-.5H9c-.964 0-1.71-.629-2.174-1.154C6.374 3.334 5.82 3 5.264 3H2.5zM14 7H2v5.5a.5.5 0 0 0 .5.5h11a.5.5 0 0 0 .5-.5V7z"/>
+                        </svg>
+                    </div>
+                    <h2>Accédez à tous les cours de votre classe</h2>
+                    <P>Retrouvez vos cours préférés, classés par système, sous système, cycle, niveau, matière, chapitre et leçons</P>
+                </div>
+                <div>
+                    <div id = "main_cercle_2">
+                        <svg class="cercle_icon" viewBox="0 0 16 16">
+                            <path d="M14.5 3a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h13zm-13-1A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-13z"/>
+                            <path d="M7 5.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5zm-1.496-.854a.5.5 0 0 1 0 .708l-1.5 1.5a.5.5 0 0 1-.708 0l-.5-.5a.5.5 0 1 1 .708-.708l.146.147 1.146-1.147a.5.5 0 0 1 .708 0zM7 9.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5zm-1.496-.854a.5.5 0 0 1 0 .708l-1.5 1.5a.5.5 0 0 1-.708 0l-.5-.5a.5.5 0 0 1 .708-.708l.146.147 1.146-1.147a.5.5 0 0 1 .708 0z"/>
+                        </svg>
+                    </div>
+                    <h2>Accédez à tous les cours de votre classe</h2>
+                    <P>Retrouvez vos cours préférés, classés par système, sous système, cycle, niveau, matière, chapitre et leçons</P>
+                </div>
+                <div>
+                    <div id = "main_cercle_3">
+                        <svg class="cercle_icon" viewBox="0 0 16 16">
+                            <path d="M8 2a5.53 5.53 0 0 0-3.594 1.342c-.766.66-1.321 1.52-1.464 2.383C1.266 6.095 0 7.555 0 9.318 0 11.366 1.708 13 3.781 13h8.906C14.502 13 16 11.57 16 9.773c0-1.636-1.242-2.969-2.834-3.194C12.923 3.999 10.69 2 8 2zm2.354 6.854-2 2a.5.5 0 0 1-.708 0l-2-2a.5.5 0 1 1 .708-.708L7.5 9.293V5.5a.5.5 0 0 1 1 0v3.793l1.146-1.147a.5.5 0 0 1 .708.708z"/>
+                        </svg>
+                    </div>
+                    <h2>Accédez à tous les cours de votre classe</h2>
+                    <P>Retrouvez vos cours préférés, classés par système, sous système, cycle, niveau, matière, chapitre et leçons</P>
+                </div>
+            </div>
+        </section>
+        <section class = "linear_section main_section">
+            <div>
+                <div>
+                    <img src="img/quisommesnous.png" alt="image qui illustre 'qui sommes nous'"></img>
+                    <div class = "top_left_square"></div>
+                    <div class = "rigth_bottom_square"></div>
+                </div>
+                <div class = "linear_sections_div_droit">
+                    <div>
+                        <h1>
+                            <span class = "main_title_start">C’est quoi</span>
+                            <span class = "main_title_end">Skilline?</span>
+                        </h1>
+                        <p>
+                            Skilline est une plateforme qui permet aux élèves de suivre des cours en ligne, conçus par les meilleurs enseignants, et d’organiser leurs apprentissage pour des résultats scolaires excellents, et tout ceci en ligne et hors ligne
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class = "linear_section main_section">
+            <div id = "deuxième_linear_sections_div_droit">
+                <div class = "linear_sections_div_droit">
+                    <div>
+                        <h1>
+                            <span class = "main_title_start">Tout ce que vous pouvez faire physiquement dans une classe</span>
+                            <span class = "main_title_end">vous pouvez le faire avec Skilline</span>
+                        </h1>
+                        <p>
+                            Skilline’s vous permet d’accéder à tous vos cours, de poser des questions et de participer aux discutions, tout comme dans une salle de classe traditionelle 
+                        </p>
+                    </div>
+                </div>
+                <div>
+                    <img src="img/quisommesnous.png" alt="image qui illustre 'qui sommes nous'"></img>
+                    <div class = "top_left_square"></div>
+                    <div class = "rigth_bottom_square"></div>
+                </div>
+            </div>
+        </section>
+        <section class = "main_section" id = "temoignage_section">
+            <div>
+                <div class = "linear_sections_div_gauche" id = "temoignage_bloc_gauche" style = "text-align: left;">
+                    <div id = "div_trait_temoignages">
+                        <span id = "trait_temoignages"></span>
+                        <p id = "temoignages">TEMOIGNAGES</p>
+                    </div>
+                    <h1 id ="titre_temoignage">Ce Que Disent Nos Utilisateurs</h1>
+                    <div id = "block_image_temoignage_petit_ecran">
+                        <!-- <svg id = "arrow_image_temoignage" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/>
+                        </svg>  -->   
+                        <img src="img/smiling-woman.png" alt="illustrations d'une femme qui souri">
+                        <div id = "texte_du_temoignage">
+                            <p>"Merci beaucoup pour votre aide. C'est exactement ce que je cherchais. Vous ne le regretterez pas. Cela me fait vraiment gagner du temps et des efforts. Skilline est exactement ce qui manquait à notre entreprise."</p>
+                            <h3 class = "nom_commentateur">Kamgang william</h3>
+                            <div id = "div_etoiles_temoignage" >
+                                <img class = "" src="img/Star 3.png" alt="etoiles">
+                                <img class = "" src="img/Star 3.png" alt="etoiles">
+                                <img class = "" src="img/Star 3.png" alt="etoiles">
+                                <img class = "" src="img/Star 3.png" alt="etoiles">
+                                <img class = "" src="img/Star 3.png" alt="etoiles">
+                            </div>
+                        </div>
+                    </div>
+                    <p id = "temoignages_p1">Skilline a reçu plus de 100 000 évaluations positives de la part de nos utilisateurs du monde entier.</p>
+                    <p id = "temoignages_p2">Certains élèves et enseignants ont été grandement aidés par la Skilline.</p>
+                    <p id = "temoignages_p3">Êtes-vous aussi? Merci de donner votre appréciation</p>
+                    <div id = "second_div_temoignage_bloc_gauche">
+                        <span id = "redigez">Rédigez votre évaluation</span>
+                        <svg id = "arrow_rigth" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/>
+                        </svg>
+                    </div>
+                </div>
+                <div id = "block_image_grand_ecran">
+                    <!-- <svg id = "arrow_image_temoignage" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/>
+                    </svg>  -->   
+                    <img src="img/smiling-woman.png" alt="illustrations d'une femme qui souri" id = "image_temoignage">
+                    <div id = "texte_du_temoignage">
+                        <p>"Merci beaucoup pour votre aide. C'est exactement ce que je cherchais. Vous ne le regretterez pas. Cela me fait vraiment gagner du temps et des efforts. Skilline est exactement ce qui manquait à notre entreprise."</p>
+                        <h3 class = "nom_commentateur">Kamgang william</h3>
+                        <div id = "div_etoiles_temoignage" >
+                            <img class = "" src="img/Star 3.png" alt="etoiles">
+                            <img class = "" src="img/Star 3.png" alt="etoiles">
+                            <img class = "" src="img/Star 3.png" alt="etoiles">
+                            <img class = "" src="img/Star 3.png" alt="etoiles">
+                            <img class = "" src="img/Star 3.png" alt="etoiles">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id = "liste_de_cours_disponibles">
+            <h1>
+                <span class = "main_title_start">Découvrez nos</span>
+                <span class = "main_title_end">derniers cours</span>
+            </h1>
+            <p id = "sous_titre_liste_de_cours_disponibles">
+                découvrez des cours qui correspondent à vos objectifs d’apprentissage            </p>
+            <div>
+                <div>
+                    <a href="lien_en_get_vers_la_page_des_cours">
+                        <div>
+                            <img src="img/nom_du_cour.png" alt="image illustrant nom du cour">
+                            <div>
+                                <h5>Class Technologies Inc. Closes $30 Million Series A Financing to Meet</h5>
+                                <p>Class Technologies Inc., the company that created Class,...</p>
+                            </div>
+                        </div>
+                    </a>
+                    <a href = "lien_en_get_vers_la_page_des_cours">
+                        <div>
+                            <img src="img/nom_du_cour.png" alt="image illustrant nom du cour">
+                            <div>
+                                <h5>Class Technologies Inc. Closes $30 Million Series A Financing to Meet</h5>
+                                <p>Class Technologies Inc., the company that created Class,...</p>
+                            </div>
+                        </div>
+                    </a>
+                    <a href = "lien_en_get_vers_la_page_des_cours">
+                        <div>
+                            <img src="img/nom_du_cour.png" alt="image illustrant nom du cour">
+                            <div>
+                                <h5>Class Technologies Inc. Closes $30 Million Series A Financing to Meet</h5>
+                                <p>Class Technologies Inc., the company that created Class,...</p>
+                            </div>
+                        </div>
+                    </a>
+                    <a href = "lien_en_get_vers_la_page_des_cours">
+                        <div>
+                            <img src="img/nom_du_cour.png" alt="image illustrant nom du cour">
+                            <div>
+                                <h5>Class Technologies Inc. Closes $30 Million Series A Financing to Meet</h5>
+                                <p>Class Technologies Inc., the company that created Class,...</p>
+                            </div>
+                        </div>
+                    </a>
+                    <a href = "lien_en_get_vers_la_page_des_cours">
+                        <div>
+                            <img src="img/nom_du_cour.png" alt="image illustrant nom du cour">
+                            <div>
+                                <h5>Class Technologies Inc. Closes $30 Million Series A Financing to Meet</h5>
+                                <p>Class Technologies Inc., the company that created Class,...</p>
+                            </div>
+                        </div>
+                    </a>
+                    <a href = "lien_en_get_vers_la_page_des_cours">
+                        <div>
+                            <img src="img/nom_du_cour.png" alt="image illustrant nom du cour">
+                            <div>
+                                <h5>Class Technologies Inc. Closes $30 Million Series A Financing to Meet</h5>
+                                <p>Class Technologies Inc., the company that created Class,...</p>
+                            </div>
+                        </div>
+                    </a>
+                    <a href = "lien_en_get_vers_la_page_des_cours">
+                        <div>
+                            <img src="img/nom_du_cour.png" alt="image illustrant nom du cour">
+                            <div>
+                                <h5>Class Technologies Inc. Closes $30 Million Series A Financing to Meet</h5>
+                                <p>Class Technologies Inc., the company that created Class,...</p>
+                            </div>
+                        </div>
+                    </a>
+                    <a href = "lien_en_get_vers_la_page_des_cours">
+                        <div>
+                            <img src="img/nom_du_cour.png" alt="image illustrant nom du cour">
+                            <div>
+                                <h5>Class Technologies Inc. Closes $30 Million Series A Financing to Meet</h5>
+                                <p>Class Technologies Inc., the company that created Class,...</p>
+                            </div>
+                        </div>
+                    </a>
+                    <a href = "lien_en_get_vers_la_page_des_cours">
+                        <div>
+                            <img src="img/nom_du_cour.png" alt="image illustrant nom du cour">
+                            <div>
+                                <h5>Class Technologies Inc. Closes $30 Million Series A Financing to Meet</h5>
+                                <p>Class Technologies Inc., the company that created Class,...</p>
+                            </div>
+                        </div>
+                    </a>
+                    <a href = "lien_en_get_vers_la_page_des_cours">
+                        <div>
+                            <img src="img/nom_du_cour.png" alt="image illustrant nom du cour">
+                            <div>
+                                <h5>Class Technologies Inc. Closes $30 Million Series A Financing to Meet</h5>
+                                <p>Class Technologies Inc., the company that created Class,...</p>
+                            </div>
+                        </div>
+                    </a>
+                    <a href = "lien_en_get_vers_la_page_des_cours">
+                        <div>
+                            <img src="img/nom_du_cour.png" alt="image illustrant nom du cour">
+                            <div>
+                                <h5>Class Technologies Inc. Closes $30 Million Series A Financing to Meet</h5>
+                                <p>Class Technologies Inc., the company that created Class,...</p>
+                            </div>
+                        </div>
+                    </a>
+                    <a href = "lien_en_get_vers_la_page_des_cours">
+                        <div>
+                            <img src="img/nom_du_cour.png" alt="image illustrant nom du cour">
+                            <div>
+                                <h5>Class Technologies Inc. Closes $30 Million Series A Financing to Meet</h5>
+                                <p>Class Technologies Inc., the company that created Class,...</p>
+                            </div>
+                        </div>
+                    </a>
+                    <a href = "lien_en_get_vers_la_page_des_cours">
+                        <div>
+                            <img src="img/nom_du_cour.png" alt="image illustrant nom du cour">
+                            <div>
+                                <h5>Class Technologies Inc. Closes $30 Million Series A Financing to Meet</h5>
+                                <p>Class Technologies Inc., the company that created Class,...</p>
+                            </div>
+                        </div>
+                    </a>
+                    <a href = "lien_en_get_vers_la_page_des_cours">
+                        <div>
+                            <img src="img/nom_du_cour.png" alt="image illustrant nom du cour">
+                            <div>
+                                <h5>Class Technologies Inc. Closes $30 Million Series A Financing to Meet</h5>
+                                <p>Class Technologies Inc., the company that created Class,...</p>
+                            </div>
+                        </div>
+                    </a>
+                    <a href = "lien_en_get_vers_la_page_des_cours">
+                        <div>
+                            <img src="img/nom_du_cour.png" alt="image illustrant nom du cour">
+                            <div>
+                                <h5>Class Technologies Inc. Closes $30 Million Series A Financing to Meet</h5>
+                                <p>Class Technologies Inc., the company that created Class,...</p>
+                            </div>
+                        </div>
+                    </a>
+                    <a href = "lien_en_get_vers_la_page_des_cours">
+                        <div>
+                            <img src="img/nom_du_cour.png" alt="image illustrant nom du cour">
+                            <div>
+                                <h5>Class Technologies Inc. Closes $30 Million Series A Financing to Meet</h5>
+                                <p>Class Technologies Inc., the company that created Class,...</p>
+                            </div>
+                        </div>
+                    </a>
+                    <a href = "lien_en_get_vers_la_page_des_cours">
+                        <div>
+                            <img src="img/nom_du_cour.png" alt="image illustrant nom du cour">
+                            <div>
+                                <h5>Class Technologies Inc. Closes $30 Million Series A Financing to Meet</h5>
+                                <p>Class Technologies Inc., the company that created Class,...</p>
+                            </div>
+                        </div>
+                    </a>
+                    <a href = "lien_en_get_vers_la_page_des_cours">
+                        <div>
+                            <img src="img/nom_du_cour.png" alt="image illustrant nom du cour">
+                            <div>
+                                <h5>Class Technologies Inc. Closes $30 Million Series A Financing to Meet</h5>
+                                <p>Class Technologies Inc., the company that created Class,...</p>
+                            </div>
+                        </div>
+                    </a>
+                    <a href = "lien_en_get_vers_la_page_des_cours">
+                        <div>
+                            <img src="img/nom_du_cour.png" alt="image illustrant nom du cour">
+                            <div>
+                                <h5>Class Technologies Inc. Closes $30 Million Series A Financing to Meet</h5>
+                                <p>Class Technologies Inc., the company that created Class,...</p>
+                            </div>
+                        </div>
+                    </a>
+                    <a href = "lien_en_get_vers_la_page_des_cours">
+                        <div>
+                            <img src="img/nom_du_cour.png" alt="image illustrant nom du cour">
+                            <div>
+                                <h5>Class Technologies Inc. Closes $30 Million Series A Financing to Meet</h5>
+                                <p>Class Technologies Inc., the company that created Class,...</p>
+                            </div>
+                        </div>
+                    </a>
+                    <a href = "lien_en_get_vers_la_page_des_cours">
+                        <div>
+                            <img src="img/nom_du_cour.png" alt="image illustrant nom du cour">
+                            <div>
+                                <h5>Class Technologies Inc. Closes $30 Million Series A Financing to Meet</h5>
+                                <p>Class Technologies Inc., the company that created Class,...</p>
+                            </div>
+                        </div>
+                    </a>
+                    <a href = "lien_en_get_vers_la_page_des_cours">
+                        <div>
+                            <img src="img/nom_du_cour.png" alt="image illustrant nom du cour">
+                            <div>
+                                <h5>Class Technologies Inc. Closes $30 Million Series A Financing to Meet</h5>
+                                <p>Class Technologies Inc., the company that created Class,...</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </div>
+    <footer>
+        <div id = "footer_container">
+            <div id = "footer_item1">
+                <span>
+                    Skiline
+                </span>
+                <div>
+                    <p>plateforme</p>
+                    <p>d'elearning</p>
+                </div>
+            </div>
+            <div id = "footer_item2">
+                <p>Retrouvez</p>
+                <p>nous</p>
+            </div>
+            <div id = "footer_item3">
+                <button class = "footer_button">
+                    <a href="">Inscription</a>
+                </button>
+                <button class = "footer_button">
+                    <a href="">Se connecter</a>
+                </button>
+            </div>
+            <div id = "div_lien_footer">
+                <a href="" id = "apropos_footer">A-propos</a>
+                <a href="" class = "lien_footer">politique de confidentialité</a>
+                <a href="" class = "lien_footer">conditions d'utilisation</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhml"	xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Erreur lors de la connexion</title>
+    <link rel="stylesheet" href="bootstrap-5.3.0-alpha3-dist/css/bootstrap.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <section class="vh-100" id = "section_formulaire_inscription_erreur">
+        <div class="container py-5 h-100" id = "background_formulaire_inscription">
+          <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+              <div class="card shadow-2-strong" style="border-radius: 1rem;">
+                <div class="card-body p-5 text-center blanc_formulaire" id = "container_texte_formulaire">
+                    <form method="post" th:action="@{/signin}" th:object="${signinForm}">
+                        <div class = "fermer_formulaire">
+                            <a href="index.html" th:href="@{/}">
+                                +
+                            </a>
+                        </div>
+
+                        <h3 class="mb-5">Bon retour !</h3>
+                        <h5 class = "nom_formulaire texte_formulaire">connectez vous pour bénéficier du meilleur des cours en ligne</h5>
+                        <div id = "erreur_creation_compte">
+                            <div id = "div_exclamation_connexion">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-exclamation-circle" viewBox="0 0 16 16">
+                                    <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+                                    <path d="M7.002 11a1 1 0 1 1 2 0 1 1 0 0 1-2 0zM7.1 4.995a.905.905 0 1 1 1.8 0l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 4.995z"/>
+                                </svg>
+                            </div>
+                            <ul id = "ul_se_connecter">
+                                <li>adresse mail ou mot de passe incorrect</li>
+                            </ul>
+                        </div>
+                        
+                        <h5 class = "nom_formulaire">ADRESSE E-mail</h5>
+                        <div class="form-outline mb-4">
+                            <input type="email" th:field="*{email}" class="form-control"  name = "mail" placeholder="Saisir votre adresse mail"/>
+                        	<div th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></div>
+                        </div>
+
+                        <h5 class = "nom_formulaire">MOT DE PASSE</h5>
+                        <div class="form-outline mb-4">
+                            <input type="password" th:field="*{password}" class="form-control" name = "password" placeholder="Saisir votre mot de passe"/>
+                        	<div th:if="${#fields.hasErrors('password')}" th:errors="*{password}"></div>
+                        </div>
+            
+                        <button class="btn btn-lg btn-block button_formulaire button_formulaire_bleu" type="submit">se connecter</button>
+                    </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+    </section>
+    <script src="bootstrap-5.3.0-alpha3-dist/js/bootstrap.bundle.js"></script>
+</body>
+</html>

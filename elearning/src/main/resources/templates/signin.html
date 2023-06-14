@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhml"	xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Se connecter</title>
+    <link rel="stylesheet" href="bootstrap-5.3.0-alpha3-dist/css/bootstrap.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    
+    <section class="vh-100" id = "section_formulaire_inscription">
+        <div class="container py-5 h-100" id = "background_formulaire_inscription">
+          <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+              <div class="card shadow-2-strong" style="border-radius: 1rem;">
+                <div class="card-body p-5 text-center" id = "container_texte_formulaire">
+                <div class = "blanc_formulaire" id = "container_texte_formulaire">
+                    <form method="post" th:action="@{/signin}" th:object="${signinForm}">
+                        <div class = "fermer_formulaire">
+                            <a href="index.html" th:href="@{/}">
+                                +
+                            </a>
+                        </div>
+
+                        <h3 class="mb-5">Bon retour !</h3>
+                        <h5 class = "nom_formulaire texte_formulaire">connectez vous pour bénéficier du meilleur des cours en ligne</h5>
+                        
+                        <h5 class = "nom_formulaire">ADRESSE E-mail</h5>
+                        <div class="form-outline mb-4">
+                            <input type="email" th:field="*{email}" class="form-control"  name = "mail" placeholder="Saisir votre adresse mail"/>
+                        	<div th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></div>
+                        </div>
+
+                        <h5 class = "nom_formulaire">MOT DE PASSE</h5>
+                        <div class="form-outline mb-4">
+                            <input type="password" th:field="*{password}" class="form-control" name = "password" placeholder="Saisir votre mot de passe"/>
+                        	<div th:if="${#fields.hasErrors('password')}" th:errors="*{password}"></div>
+                        </div>
+            
+                        <button class="btn btn-primary btn-lg btn-block button_formulaire" type="submit" id = "button_inscrire">connexion</button>
+                    </form>
+                </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+    </section>
+    <script src="bootstrap-5.3.0-alpha3-dist/js/bootstrap.bundle.js"></script>
+</body>
+</html>

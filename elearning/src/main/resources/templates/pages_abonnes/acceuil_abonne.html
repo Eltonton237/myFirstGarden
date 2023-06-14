@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhml"	xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acceuil enseignant</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <div id = "page_post_connexion">
+        <aside id = "asside_acceuil_enseignant">
+            <a href="acceuil_abonne.html" th:href="@{/acceuil_abonne}">
+                <h1 id = "nom_marque_header" class = "nom_header_partage">SKILINE</h1>
+            </a>
+            <div class = "conteneur_asside_partage" id = "premier_conteneur_asside_partage">
+                <a href="acceuil_abonne.html" th:href="@{/acceuil_abonne}">
+                    <div id = "acceuil_partage">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-house-fill" viewBox="0 0 16 16">
+                            <path d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L8 2.207l6.646 6.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.707 1.5Z"/>
+                            <path d="m8 3.293 6 6V13.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5V9.293l6-6Z"/>
+                        </svg>
+                        <p>Acceuil</p>
+                    </div>
+                </a>
+                <a href="profil.html" th:href="@{/profilAbonne}">
+                    <div>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16">
+                            <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3Zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"></path>
+                        </svg>
+                        <p>Profil</p>
+                    </div>
+                </a>
+            </div>
+            <hr class = "hr_aside">
+            <div class = "conteneur_asside_partage">
+                <a href="parcourir.html" th:href="@{/parcourirAbonne}">
+                    <div>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-folder-fill" viewBox="0 0 16 16" id = "folder">
+                            <path d="M9.828 3h3.982a2 2 0 0 1 1.992 2.181l-.637 7A2 2 0 0 1 13.174 14H2.825a2 2 0 0 1-1.991-1.819l-.637-7a1.99 1.99 0 0 1 .342-1.31L.5 3a2 2 0 0 1 2-2h3.672a2 2 0 0 1 1.414.586l.828.828A2 2 0 0 0 9.828 3zm-8.322.12C1.72 3.042 1.95 3 2.19 3h5.396l-.707-.707A1 1 0 0 0 6.172 2H2.5a1 1 0 0 0-1 .981l.006.139z"/>
+                        </svg>
+                        <p>Parcourir</p>
+                    </div>
+                </a>
+            </div>
+            <hr class = "hr_aside">
+            <div class = "conteneur_asside_partage">
+                <a href="../se_deconnecter.html" th:href="@{/se_deconnecter}">
+                    <div>
+                        <svg xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 -960 960 960" width="48"><path d="M180-120q-24 0-42-18t-18-42v-600q0-24 18-42t42-18h291v60H180v600h291v60H180Zm486-185-43-43 102-102H375v-60h348L621-612l43-43 176 176-174 174Z"/></svg>
+                        <p>Se déconnecter</p>
+                    </div>
+                </a>
+                <a href="../en_savoir_plus.html" th:href="@{/en_savoir_plus}">
+                    <div>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-exclamation-circle-fill" viewBox="0 0 16 16">
+                            <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8 4a.905.905 0 0 0-.9.995l.35 3.507a.552.552 0 0 0 1.1 0l.35-3.507A.905.905 0 0 0 8 4zm.002 6a1 1 0 1 0 0 2 1 1 0 0 0 0-2z"/>
+                        </svg>
+                        <p>En savoir plus</p>
+                    </div>
+                </a>
+            </div>
+        </aside>
+        <main id = "main_partage">
+            <div id = "top_partager">
+                <div>
+                    <div id="barre_principale_header" class = "recherche_partage">
+                        <div class="div_de_la_recherche" id = "div_de_la_recherche_partage">
+                            <svg viewBox="0 0 16 16">
+                                <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"></path>
+                              </svg>
+                        </div>
+                    </div>
+                </div>
+                <div id = "info_user_partage">
+                    <div id = "parametre_header_partage">
+                    </div>
+                    <a href="profil.html" th:href="@{/profilAbonne}" id = "photo_nom_user">
+                        <img src="../img/enseignant.jpg" alt="">
+                        <p>kamgang william</p>
+                    </a>
+                </div>
+            </div>
+            <div id = "partager_centre">
+                <div id = "container_centre_partage">
+                    <div id = "mes_cours_milieu">
+                        <div class = svg_mes_cours_second>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bookmark" viewBox="0 0 16 16">
+                                <path d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v13.5a.5.5 0 0 1-.777.416L8 13.101l-5.223 2.815A.5.5 0 0 1 2 15.5V2zm2-1a1 1 0 0 0-1 1v12.566l4.723-2.482a.5.5 0 0 1 .554 0L13 14.566V2a1 1 0 0 0-1-1H4z"/>
+                            </svg>
+                        </div>
+                        <h2>Mes cours</h2>
+                    </div>
+                    <div id = "conteneur_cours_partage">
+                        <a href="">
+                            <div class = "lien_cours_partage">
+                                <img src="../img/nom_du_cour.png" alt="image illustrant nom du cour">
+                                <div>
+                                    <h5>Class Technologies Inc. Closes $30 Million Series A Financing to Meet</h5>
+                                    <p>Class Technologies Inc., the company that created Class,...</p>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="">
+                            <div class = "lien_cours_partage">
+                                <img src="../img/nom_du_cour.png" alt="image illustrant nom du cour">
+                                <div>
+                                    <h5>Class Technologies Inc. Closes $30 Million Series A Financing to Meet</h5>
+                                    <p>Class Technologies Inc., the company that created Class,...</p>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="">
+                            <div class = "lien_cours_partage">
+                                <img src="../img/nom_du_cour.png" alt="image illustrant nom du cour">
+                                <div>
+                                    <h5>Class Technologies Inc. Closes $30 Million Series A Financing to Meet</h5>
+                                    <p>Class Technologies Inc., the company that created Class,...</p>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="">
+                            <div class = "lien_cours_partage">
+                                <img src="../img/nom_du_cour.png" alt="image illustrant nom du cour">
+                                <div>
+                                    <h5>Class Technologies Inc. Closes $30 Million Series A Financing to Meet</h5>
+                                    <p>Class Technologies Inc., the company that created Class,...</p>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="">
+                            <div class = "lien_cours_partage">
+                                <img src="../img/nom_du_cour.png" alt="image illustrant nom du cour">
+                                <div>
+                                    <h5>Class Technologies Inc. Closes $30 Million Series A Financing to Meet</h5>
+                                    <p>Class Technologies Inc., the company that created Class,...</p>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="">
+                            <div class = "lien_cours_partage">
+                                <img src="../img/nom_du_cour.png" alt="image illustrant nom du cour">
+                                <div>
+                                    <h5>Class Technologies Inc. Closes $30 Million Series A Financing to Meet</h5>
+                                    <p>Class Technologies Inc., the company that created Class,...</p>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="">
+                            <div class = "lien_cours_partage">
+                                <img src="../img/nom_du_cour.png" alt="image illustrant nom du cour">
+                                <div>
+                                    <h5>Class Technologies Inc. Closes $30 Million Series A Financing to Meet</h5>
+                                    <p>Class Technologies Inc., the company that created Class,...</p>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="">
+                            <div class = "lien_cours_partage">
+                                <img src="../img/nom_du_cour.png" alt="image illustrant nom du cour">
+                                <div>
+                                    <h5>Class Technologies Inc. Closes $30 Million Series A Financing to Meet</h5>
+                                    <p>Class Technologies Inc., the company that created Class,...</p>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="">
+                            <div class = "lien_cours_partage">
+                                <img src="../img/nom_du_cour.png" alt="image illustrant nom du cour">
+                                <div>
+                                    <h5>Class Technologies Inc. Closes $30 Million Series A Financing to Meet</h5>
+                                    <p>Class Technologies Inc., the company that created Class,...</p>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="">
+                            <div class = "lien_cours_partage">
+                                <img src="../img/nom_du_cour.png" alt="image illustrant nom du cour">
+                                <div>
+                                    <h5>Class Technologies Inc. Closes $30 Million Series A Financing to Meet</h5>
+                                    <p>Class Technologies Inc., the company that created Class,...</p>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="">
+                            <div class = "lien_cours_partage">
+                                <img src="../img/nom_du_cour.png" alt="image illustrant nom du cour">
+                                <div>
+                                    <h5>Class Technologies Inc. Closes $30 Million Series A Financing to Meet</h5>
+                                    <p>Class Technologies Inc., the company that created Class,...</p>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="">
+                            <div class = "lien_cours_partage">
+                                <img src="../img/nom_du_cour.png" alt="image illustrant nom du cour">
+                                <div>
+                                    <h5>Class Technologies Inc. Closes $30 Million Series A Financing to Meet</h5>
+                                    <p>Class Technologies Inc., the company that created Class,...</p>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="">
+                            <div class = "lien_cours_partage">
+                                <img src="../img/nom_du_cour.png" alt="image illustrant nom du cour">
+                                <div>
+                                    <h5>Class Technologies Inc. Closes $30 Million Series A Financing to Meet</h5>
+                                    <p>Class Technologies Inc., the company that created Class,...</p>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="">
+                            <div class = "lien_cours_partage">
+                                <img src="../img/nom_du_cour.png" alt="image illustrant nom du cour">
+                                <div>
+                                    <h5>Class Technologies Inc. Closes $30 Million Series A Financing to Meet</h5>
+                                    <p>Class Technologies Inc., the company that created Class,...</p>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="">
+                            <div class = "lien_cours_partage">
+                                <img src="../img/nom_du_cour.png" alt="image illustrant nom du cour">
+                                <div>
+                                    <h5>Class Technologies Inc. Closes $30 Million Series A Financing to Meet</h5>
+                                    <p>Class Technologies Inc., the company that created Class,...</p>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="">
+                            <div class = "lien_cours_partage">
+                                <img src="../img/nom_du_cour.png" alt="image illustrant nom du cour">
+                                <div>
+                                    <h5>Class Technologies Inc. Closes $30 Million Series A Financing to Meet</h5>
+                                    <p>Class Technologies Inc., the company that created Class,...</p>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="">
+                            <div class = "lien_cours_partage">
+                                <img src="../img/nom_du_cour.png" alt="image illustrant nom du cour">
+                                <div>
+                                    <h5>Class Technologies Inc. Closes $30 Million Series A Financing to Meet</h5>
+                                    <p>Class Technologies Inc., the company that created Class,...</p>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="">
+                            <div class = "lien_cours_partage">
+                                <img src="../img/nom_du_cour.png" alt="image illustrant nom du cour">
+                                <div>
+                                    <h5>Class Technologies Inc. Closes $30 Million Series A Financing to Meet</h5>
+                                    <p>Class Technologies Inc., the company that created Class,...</p>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="">
+                            <div class = "lien_cours_partage">
+                                <img src="../img/nom_du_cour.png" alt="image illustrant nom du cour">
+                                <div>
+                                    <h5>Class Technologies Inc. Closes $30 Million Series A Financing to Meet</h5>
+                                    <p>Class Technologies Inc., the company that created Class,...</p>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="">
+                            <div class = "lien_cours_partage">
+                                <img src="../img/nom_du_cour.png" alt="image illustrant nom du cour">
+                                <div>
+                                    <h5>Class Technologies Inc. Closes $30 Million Series A Financing to Meet</h5>
+                                    <p>Class Technologies Inc., the company that created Class,...</p>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="">
+                            <div class = "lien_cours_partage">
+                                <img src="../img/nom_du_cour.png" alt="image illustrant nom du cour">
+                                <div>
+                                    <h5>Class Technologies Inc. Closes $30 Million Series A Financing to Meet</h5>
+                                    <p>Class Technologies Inc., the company that created Class,...</p>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="">
+                            <div class = "lien_cours_partage">
+                                <img src="../img/nom_du_cour.png" alt="image illustrant nom du cour">
+                                <div>
+                                    <h5>Class Technologies Inc. Closes $30 Million Series A Financing to Meet</h5>
+                                    <p>Class Technologies Inc., the company that created Class,...</p>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="">
+                            <div class = "lien_cours_partage">
+                                <img src="../img/nom_du_cour.png" alt="image illustrant nom du cour">
+                                <div>
+                                    <h5>Class Technologies Inc. Closes $30 Million Series A Financing to Meet</h5>
+                                    <p>Class Technologies Inc., the company that created Class,...</p>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="">
+                            <div class = "lien_cours_partage">
+                                <img src="../img/nom_du_cour.png" alt="image illustrant nom du cour">
+                                <div>
+                                    <h5>Class Technologies Inc. Closes $30 Million Series A Financing to Meet</h5>
+                                    <p>Class Technologies Inc., the company that created Class,...</p>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="">
+                            <div class = "lien_cours_partage">
+                                <img src="../img/nom_du_cour.png" alt="image illustrant nom du cour">
+                                <div>
+                                    <h5>Class Technologies Inc. Closes $30 Million Series A Financing to Meet</h5>
+                                    <p>Class Technologies Inc., the company that created Class,...</p>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="">
+                            <div class = "lien_cours_partage">
+                                <img src="../img/nom_du_cour.png" alt="image illustrant nom du cour">
+                                <div>
+                                    <h5>Class Technologies Inc. Closes $30 Million Series A Financing to Meet</h5>
+                                    <p>Class Technologies Inc., the company that created Class,...</p>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="">
+                            <div class = "lien_cours_partage">
+                                <img src="../img/nom_du_cour.png" alt="image illustrant nom du cour">
+                                <div>
+                                    <h5>Class Technologies Inc. Closes $30 Million Series A Financing to Meet</h5>
+                                    <p>Class Technologies Inc., the company that created Class,...</p>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="">
+                            <div class = "lien_cours_partage">
+                                <img src="../img/nom_du_cour.png" alt="image illustrant nom du cour">
+                                <div>
+                                    <h5>Class Technologies Inc. Closes $30 Million Series A Financing to Meet</h5>
+                                    <p>Class Technologies Inc., the company that created Class,...</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <div id="container_header_patage_mocile">
+        <div id = "header_partage_mobile">
+            <a href="acceuil_abonne.html" th:href="@{/acceuil_abonne}">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-house-fill" viewBox="0 0 16 16">
+                    <path d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L8 2.207l6.646 6.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.707 1.5Z"/>
+                    <path d="m8 3.293 6 6V13.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5V9.293l6-6Z"/>
+                </svg>
+                <p>Acceuil</p>
+            </a>
+            <a href="parcourir.html" th:href="@{/parcourirAbonne}">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-folder-fill" viewBox="0 0 16 16">
+                    <path d="M9.828 3h3.982a2 2 0 0 1 1.992 2.181l-.637 7A2 2 0 0 1 13.174 14H2.825a2 2 0 0 1-1.991-1.819l-.637-7a1.99 1.99 0 0 1 .342-1.31L.5 3a2 2 0 0 1 2-2h3.672a2 2 0 0 1 1.414.586l.828.828A2 2 0 0 0 9.828 3zm-8.322.12C1.72 3.042 1.95 3 2.19 3h5.396l-.707-.707A1 1 0 0 0 6.172 2H2.5a1 1 0 0 0-1 .981l.006.139z"/>
+                </svg>
+                <p>Parcourir</p>
+            </a>
+            <a onclick="togleAssideVisibility()">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-gear-fill" viewBox="0 0 16 16">
+                    <path d="M9.405 1.05c-.413-1.4-2.397-1.4-2.81 0l-.1.34a1.464 1.464 0 0 1-2.105.872l-.31-.17c-1.283-.698-2.686.705-1.987 1.987l.169.311c.446.82.023 1.841-.872 2.105l-.34.1c-1.4.413-1.4 2.397 0 2.81l.34.1a1.464 1.464 0 0 1 .872 2.105l-.17.31c-.698 1.283.705 2.686 1.987 1.987l.311-.169a1.464 1.464 0 0 1 2.105.872l.1.34c.413 1.4 2.397 1.4 2.81 0l.1-.34a1.464 1.464 0 0 1 2.105-.872l.31.17c1.283.698 2.686-.705 1.987-1.987l-.169-.311a1.464 1.464 0 0 1 .872-2.105l.34-.1c1.4-.413 1.4-2.397 0-2.81l-.34-.1a1.464 1.464 0 0 1-.872-2.105l.17-.31c.698-1.283-.705-2.686-1.987-1.987l-.311.169a1.464 1.464 0 0 1-2.105-.872l-.1-.34zM8 10.93a2.929 2.929 0 1 1 0-5.86 2.929 2.929 0 0 1 0 5.858z"/>
+                </svg>
+                <p>Parametres</p>
+            </a>
+    
+        </div>
+    </div>
+    <div class = "conteneur_asside_partage" id = "liste_parametres">
+        <a href="profil.html" th:href="@{/profilAbonne}">
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16">
+                    <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3Zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"></path>
+                </svg>
+                <p>Profil</p>
+            </div>
+        </a>
+        <hr class = "hr_aside">
+        <a href="../en_savoir_plus.html" th:href="@{/en_savoir_plus}">
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-exclamation-circle-fill" viewBox="0 0 16 16">
+                    <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8 4a.905.905 0 0 0-.9.995l.35 3.507a.552.552 0 0 0 1.1 0l.35-3.507A.905.905 0 0 0 8 4zm.002 6a1 1 0 1 0 0 2 1 1 0 0 0 0-2z"/>
+                </svg>
+                <p>En savoir plus</p>
+            </div>
+        </a>
+        <hr class = "hr_aside">
+        <a href="../se_deconnecter.html" th:href="@{/se_deconnecter}">
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 -960 960 960" width="48"><path d="M180-120q-24 0-42-18t-18-42v-600q0-24 18-42t42-18h291v60H180v600h291v60H180Zm486-185-43-43 102-102H375v-60h348L621-612l43-43 176 176-174 174Z"/></svg>
+                <p>Se déconnecter</p>
+            </div>
+        </a>
+    </div>
+    <script>
+        var asside = document.getElementById('liste_parametres');
+        function togleAssideVisibility(){
+            if(asside.style.display == ""){
+                asside.style.display = "block";
+            }else{
+                asside.style.display = "";
+            }
+        }
+
+        /*Fermer le clock des paramettres après leur ouverture sur petit ecran, ceci quand on passe sur grand ecran*/
+        var grandEcran;
+        function togleblocVisibility(){
+            grandEcran = window.matchMedia("(min-width: 916px)");
+            if (grandEcran.matches) {
+                asside.style.display = "";
+            }
+        }
+        window.addEventListener("resize", togleblocVisibility);
+
+    </script>
+</body>
+</html>
